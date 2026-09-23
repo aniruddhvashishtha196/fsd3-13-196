@@ -1,0 +1,8 @@
+
+
+/* curd c-create/add/insert
+        R-retrive/view/get
+        U-update/modify/edit
+        D-delete/remove/destroy
+    */
+    
