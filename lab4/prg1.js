@@ -1,10 +1,27 @@
-import express from 'express'
+import express  from 'express'
 
-const app = express()
-//reques goes here 
+const app = express();
+
+// request goes here
 app.get("/",(req,res)=>{
     res.send("<h1>Hello Express</h1>")
 })
+app.get ("/about",(req,res)=>{
+    res.send("<h2>about page us page</h2>")
+});
+const products=[
+{id:1,name:'marker', price:15,qty:100 },
+{id:2,name:'duster',price:24,qty:50}
 
-// always listen at last
-app.listen(3333,()=>console.log("prg1 is running at 3333"));
+];
+app.get("/products",(req,res)=>{
+    res.status(200).send(products);
+   
+});
+app.use((req,res)=>{
+    res.status(404).send("<h1>page not found</h1>");
+});
+
+
+// always listen at last 
+app.listen(3333 ,() => console.log("prg1 is running at 3333"));
